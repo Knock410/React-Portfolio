@@ -1,25 +1,20 @@
 import React from "react";
-import React, { useState } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 //oragnized navigation titles in an array so the same data can be oragnized and used elsewhere in the application
 
-function Nav() {
-const [categories] = useState([
-  { name: "About MeProject", description: "Personal blurb" },
-  { name: "Portfolio", description: "Project Library" },
-  { name: "ContactProject", description: "Connect with me" },
-  { name: "Resume", description: "My resume" },
-]);
-
-function categorySelected(name) {
-  console.log(`${name} clicked`);
-}
+function Nav(props) {
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory,
+  } = props;
 
   return (
-    <header>
+    <header className="flex-row px-1">
       <h2>
-        <a href="/">
+        <a data-testid='link' href="/">
+          {/* add profile pic */}
           <span role="img" aria-label="pfp">
             {" "}
           </span>{" "}
@@ -29,16 +24,24 @@ function categorySelected(name) {
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about">About me</a>
+            <a data-testid="about" href="#about">
+              About me
+            </a>
           </li>
-          <li>
+          <li className="mx-2">
             <span>Contact</span>
           </li>
           {/* mapped over the array  */}
           {categories.map((category) => (
-            <li className="mx-1" key={category.name}>
-              <span onClick={() => categorySelected(category.name)}>
-                {category.name}
+            <li className={`mx-1 ${
+                currentCategory.name === category.name && 'navActive'
+                }`} key={category.name}>
+              <span
+                onClick={() => {
+                  setCurrentCategory(category)
+                }}
+              >
+                {capitalizeFirstLetter(category.name)}
               </span>
             </li>
           ))}
