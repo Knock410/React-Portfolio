@@ -1,5 +1,8 @@
 import React from 'react';
 import coverImage from "../../assets/cover/cover-image.jpg";
+//array of navigation components in an array so that it can be used elsewhere within the application
+
+
 
 function About() {
   return (
