@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 //oragnized navigation titles in an array so the same data can be oragnized and used elsewhere in the application
@@ -9,7 +9,11 @@ function Nav(props) {
     setCurrentCategory,
     currentCategory,
   } = props;
-
+ 
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
+  
   return (
     <header className="flex-row px-1">
       <h2>
