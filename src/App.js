@@ -6,10 +6,10 @@ import Display from "./components/Display";
 function App() {
 
   const [categories] = useState([
-    { name: "About MeProject", description: "Personal blurb" },
-    { name: "Portfolio", description: "Project Library" },
-    { name: "ContactProject", description: "Connect with me" },
-    { name: "Resume", description: "My resume" },
+    { name: "about meproject", description: "Personal blurb" },
+    { name: "portfolio", description: "Project Library" },
+    { name: "contactproject", description: "Connect with me" },
+    { name: "resume", description: "My resume" },
   ]);
   
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
