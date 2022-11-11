@@ -8,6 +8,8 @@ function App() {
 
   const [categories] = useState([
    
+    { name: "about", description: "Project Library" },
+    { name: "contact", description: "Project Library" },
     { name: "portfolio", description: "Project Library" },
     { name: "resume", description: "My resume" },
   ]);
@@ -16,6 +18,15 @@ function App() {
 // possible add an OR operator so that the display project portion renders indvidually along witht the resume 
 const [contactSelected, setContactSelected] = useState(false);
 // const [portfolioSelected, setPortfolioSelected] = useState(false);
+
+const showPage = () => {
+  switch(currentCategory.name) {
+    case "portfolio": return <Display currentCategory={currentCategory} />
+    // case "resume":
+    case "contact": return <ContactForm />
+    case "about": return <About/>
+  }
+}
 
   return (
     <div>
@@ -28,15 +39,17 @@ const [contactSelected, setContactSelected] = useState(false);
       </Nav>
       <main>
         {/* if else statment for SPA instead of APP */}
-      {!contactSelected ? (
+      {/* {!contactSelected ? (
           <>
             <Display currentCategory={currentCategory}></Display>
             <About></About>
           </>
         ) : (
           <ContactForm></ContactForm>
-        )}
+        )} */}
+        {showPage()}
       </main>
+      {/* Add Footer Component */}
     </div>
   );
 }
