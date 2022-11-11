@@ -16,31 +16,36 @@ const PhotoProjectDisplay = ({ category }) => {
       category: "portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
+      link: "https://radiant-dawn-79781.herokuapp.com/"
+      },
     {
       name: "Quiz",
       category: "portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
+      link: "https://knock410.github.io/Quiz-/",
+      },
     {
       name: "Take Note",
       category: "portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
+      link:"https://peaceful-sierra-50494.herokuapp.com/"
     },
     {
       name: "Team Profile Generator",
       category: "portfolio",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
+       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
+      link:"https://github.com/Knock410/Team-Profile-Generator-"
+      },
     {
       name: "Weather App",
       category: "portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
+      link: "https://knock410.github.io/Weather-Dashboard-/"
+      },
   ]);
 
   const currentPhotos = photos.filter((photo) => photo.category === category);
@@ -64,3 +69,7 @@ const PhotoProjectDisplay = ({ category }) => {
 };
 
 export default PhotoProjectDisplay;
+
+// Add title of app to each application
+//profile picture
+

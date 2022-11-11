@@ -3,14 +3,15 @@ import About from "./components/About";
 import Nav from "./components/Nav";
 import Display from "./components/Display";
 import ContactForm from './components/Contact';
+import Resume from './components/Resume';
 
 function App() {
 
   const [categories] = useState([
    
-    { name: "about", description: "Project Library" },
-    { name: "contact", description: "Project Library" },
+    { name: "about", description: "Get to know me" },
     { name: "portfolio", description: "Project Library" },
+    { name: "contact", description: "Connect with me" },
     { name: "resume", description: "My resume" },
   ]);
   
@@ -22,7 +23,7 @@ const [contactSelected, setContactSelected] = useState(false);
 const showPage = () => {
   switch(currentCategory.name) {
     case "portfolio": return <Display currentCategory={currentCategory} />
-    // case "resume":
+    case "resume": return <Resume />
     case "contact": return <ContactForm />
     case "about": return <About/>
   }
