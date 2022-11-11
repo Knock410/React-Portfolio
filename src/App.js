@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Display from "./components/Display";
 import ContactForm from './components/Contact';
 import Resume from './components/Resume';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -50,7 +51,7 @@ const showPage = () => {
         )} */}
         {showPage()}
       </main>
-      {/* Add Footer Component */}
+      <Footer></Footer>
     </div>
   );
 }
