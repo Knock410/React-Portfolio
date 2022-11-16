@@ -6,6 +6,7 @@ const PhotoProjectDisplay = ({ category }) => {
   const [photos] = useState([
     {
       name: "Calendar",
+      // title: "Calendar",
       category: "portfolio",
       description:
        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
@@ -13,6 +14,7 @@ const PhotoProjectDisplay = ({ category }) => {
       },
     {
       name: "Note Taker",
+      // title: "Note Taker",
       category: "portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
@@ -54,6 +56,8 @@ const PhotoProjectDisplay = ({ category }) => {
     <div>
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
+          <div>
+            <h3>{image.name}</h3>
           <a href={image.link} target="_blank" rel="noreferrer">
             <img
               src={require(`../../assets/portfolio-pics/${image.category}/${i}.jpg`)}
@@ -62,6 +66,8 @@ const PhotoProjectDisplay = ({ category }) => {
               key={image.name}
             />
           </a>
+          </div>
+         
         ))}
       </div>
     </div>
